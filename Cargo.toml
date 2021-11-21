@@ -7,3 +7,6 @@ edition = "2018"
 
 [dependencies]
 rppal = "0.13.1"
+
+sunrise = "1.0.0"
+chrono = "0.4"
