@@ -104,14 +104,14 @@ impl Energenie {
     }
 
     pub fn on(&mut self, id: u8) {
-        assert!(id <= 4 && id >= 1, "ID must be within range");
+        assert!((1..=4).contains(&id), "ID must be within range");
 
         let code = 16 - id;
         self.send_code(code);
     }
 
     pub fn off(&mut self, id: u8) {
-        assert!(id <= 4 && id >= 1, "ID must be within range");
+        assert!((1..=4).contains(&id), "ID must be within range");
 
         let code = 8 - id;
         self.send_code(code);
