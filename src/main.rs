@@ -52,8 +52,8 @@ fn fixed_state(now: DateTime<Local>) -> Option<bool> {
     }
 
     // on a week day, turn on from 15:00 - 16:00 so that kids coming home from school can see the lights
-    if (1..=5).contains(&now.weekday().num_days_from_sunday()) {
-        return Some(time > pm3 && time < pm4);
+    if (1..=5).contains(&now.weekday().num_days_from_sunday()) && time > pm3 && time < pm4 {
+        return Some(true);
     }
 
     if time > pm11 || time < am7 {
